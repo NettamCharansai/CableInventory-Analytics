@@ -1,166 +1,64 @@
-[![Build](https://github.com/cepdnaclk/smart-inventory-management-system/actions/workflows/laravel.yml/badge.svg)](https://github.com/cepdnaclk/smart-inventory-management-system/actions/workflows/laravel.yml)
-
 # Smart Inventory Management System
 
-Smart Inventory Management System for Department MakerSpace Lab
+A full-stack inventory and lifecycle management platform designed to support technical laboratories with reliable tracking, testing data logging, and quality control enforcement. This system was developed to meet the evolving needs of departmental MakerSpace labs, offering a scalable and maintainable approach to inventory monitoring and control.
 
-### Demo Credentials
+## 🔍 Introduction
 
-**Admin:** admin@example.com  
-**Password:** admin_user
+This project leverages the Laravel framework with Vue.js frontend components to deliver a feature-rich, database-driven solution for tracking laboratory equipment and components. Inspired by the demands of quality control and scientific environments, the system offers robust role-based access control, statistical data views, lifecycle traceability, and modular architecture for extending monitoring and test validation functionality.
 
-**User:** user@example.com  
-**Password:** regular_user
+Originally scaffolded using the Laravel Boilerplate, it integrates:
+- Backend dashboard with CoreUI and Spatie/Permission for user management
+- Frontend built on Bootstrap 4 with Laravel Livewire tables for searchable, sortable interfaces
+- Built-in support for authentication, multilingual access, and data seeding for testing and simulation
 
-**User:** lecturer@example.com  
-**Password:** lecturer_user
 
-### Introduction
+---
 
-Laravel Boilerplate provides you with a massive head start on any size web application. Out of the box it has features like a backend built on CoreUI with Spatie/Permission authorization. It has a frontend scaffold built on Bootstrap 4. Other features such as Two Factor Authentication, User/Role management, searchable/sortable tables built on my [Laravel Livewire tables plugin](https://github.com/rappasoft/laravel-livewire-tables), user impersonation, timezone support, multi-lingual support with 20+ built in languages, demo mode, and much more.
+## 👥 Demo Credentials
 
-[Click here for the official documentation](http://laravel-boilerplate.com)
+| Role     | Email               | Password       |
+|----------|---------------------|----------------|
+| Admin    | admin@example.com   | admin_user     |
+| User     | user@example.com    | regular_user   |
+| Lecturer | lecturer@example.com| lecturer_user  |
 
-## Team of Developers
+---
 
--   [Nuwan Jaliyagoda](http://github.com/NuwanJ)
+## 🎯 Key Features
 
-### Sprint 2A
+- ✅ Inventory lifecycle tracking with update history and soft deletion
+- 📊 Validation-ready database design for asset condition and calibration logs
+- 🔒 Multi-role access (Admin, User, Lecturer) with scoped permissions
+- 📦 Asset registration with category, location, and serial metadata
+- 📈 Vue.js-powered analytics view for anomaly detection and usage trends
+- 🧪 Testing data handling modules for QA scenarios and pre/post analysis
+- 📤 Export-ready reports for maintenance, testing, and compliance audits
 
--   [Tharmapalan Thanujan](http://github.com/thanujan96)
--   [Madhushan Ramalingam](https://github.com/DrMadhushan)
--   [Thilini Madushani](http://github.com/Thilini98)
+---
 
-### Sprint 3A
+## 🛠 Technologies Used
 
--   [Ishan Fernando](https://github.com/ishanfdo18098)
--   [Adeepa Fernando](https://github.com/NipunFernando)
--   [Ridma Jayasundara ](https://github.com/ridmajayasundara)
+- **Backend**: PHP, Laravel, MySQL
+- **Frontend**: Vue.js, Bootstrap 4, Laravel Livewire
+- **Tools**: Node.js, Composer, NPM, Artisan CLI
+- **DevOps**: GitHub Actions, WAMP Server, Bash scripting
 
-### Sprint 3B
+---
 
--   [Sadia Jameel](https://github.com/SaadiaJameel)
--   [Sakuni Nimnadi](https://github.com/SakuniJayasinghe)
--   [Thamish Wanduragala](https://github.com/Thamish99)
+## 🚀 Getting Started
 
-### Sprint 3C
+### Prerequisites
+Ensure WAMP server (or equivalent) is installed and a database user is configured.
 
--   [Karan R.](https://github.com/rasathuraikaran)
--   [Gowsigan A.](https://github.com/AnnalingamGowsigan)
--   [Muthuni De Alwis](https://github.com/muthuni-dealwis)
+### 1. Install Dependencies
 
-## Useful Commands and Instructions
-
-You need to install Wamp server and run it before following commands.
-Please make sure you already created database user account.
-
-#### Install Dependencies
-
-```
-// Install PHP dependencies
+```bash
+# PHP dependencies
 composer install
 
-// If you received mmap() error, use this command
-// php -d memory_limit=-1 /usr/local/bin/composer install
+# Optional: Resolve memory issues
+php -d memory_limit=-1 /usr/local/bin/composer install
 
-// Update PHP dependencies
-composer update
-
-// Install Node dependencies (development mode)
+# Node modules
 npm install
 npm run dev
-```
-
-#### Prepare for the first run
-
-```
-// Prepare the public link for storage
-php artisan storage:link
-
-// Prepare the database
-php artisan migrate
-
-// Reset the database and seed the data
-php artisan migrate:fresh --seed
-
-// Prepare webhook for unit testing
-git config --local core.hooksPath .githooks
-
-```
-
-#### Serve in the local environment
-
-```
-// Serve PHP web server
-php artisan serve
-
-// Serve PHP web server, in a specific IP & port
-php artisan serve --host=0.0.0.0 --port=8000
-
-// To work with Vue components
-npm run watch
-```
-
-#### Run all above commands from bash script
-
-```
-// Enable execution of bash script (for Linux)
-chmod +x Start.sh
-
-// Run bash script
-./Start.sh
-```
-
-#### Cache and optimization
-
-```
-// Remove dev dependencies
-composer install --optimize-autoloader --no-dev
-
-php artisan config:cache
-php artisan route:cache
-php artisan view:cache
-
-php artisan config:clear
-php artisan route:clear
-php artisan view:clear
-```
-
-#### Maintenance related commands
-
-```
-php artisan down --message="{Message}" --retry=60
-php artisan up
-```
-
-#### Other useful instructions
-
-```
-// Create Model, Controller and Database Seeder
-php artisan make:model {name} --migration --controller --seed
-
-// Create a Email
-php artisan make:mail -m
-
-// Commandline interface for Database Operations
-php artisan tinker
-
-// Run the unit tests
-php artisan test
-
-// Run unit tests in parallel
-php artisan test -p
-
-```
-
-#### Resource Routes
-
-| Verb      | URI                             | Action  | Route Name             |
-| :-------- | :------------------------------ | :------ | :--------------------- |
-| GET       | /photos/{photo}/comments        | index   | photos.comments.index  |
-| GET       | /photos/{photo}/comments/create | create  | photos.comments.create |
-| POST      | /photos/{photo}/comments        | store   | photos.comments.store  |
-| GET       | /comments/{comment}             | show    | comments.show          |
-| GET       | /comments/{comment}/edit        | edit    | comments.edit          |
-| PUT/PATCH | /comments/{comment}             | update  | comments.update        |
-| DELETE    | /comments/{comment}             | destroy | comments.destroy       |
